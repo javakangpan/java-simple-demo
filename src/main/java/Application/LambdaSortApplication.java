@@ -3,8 +3,9 @@
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
+import java.util.Map;
 import java.util.function.Consumer;
 
 public class LambdaSortApplication {
@@ -46,5 +47,19 @@ public class LambdaSortApplication {
 //            }
 //        }
         
+        Consumer<String> printConsumer = new Consumer<String>() {
+            public void accept(String name) {
+                System.out.print(name + "--");
+            };
+        };
+        list.forEach(printConsumer);
+        
+        list.forEach(System.out::print);
+        
+        Map<Integer, String> namesMap = new HashMap<>();
+        namesMap.put(1, "Larry");
+        namesMap.put(2, "Steve");
+        namesMap.put(3, "James");
+        namesMap.forEach((key, value) -> System.out.println(key + " " + value));
     }
 }
