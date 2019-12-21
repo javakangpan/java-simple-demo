@@ -31,6 +31,7 @@ import Interface.Converter;
         System.out.println(converted01.getClass()); 
         
         Something something = new Something();
+        //Java 8允许您通过::关键字传递方法或构造函数的引用
         Converter<String, String> converter02 = something::startsWith;
         String converted02 = converter02.convert("Java");
         System.out.println(converted02); 
