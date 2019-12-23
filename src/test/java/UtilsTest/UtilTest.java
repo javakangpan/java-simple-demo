@@ -2,6 +2,7 @@ package UtilsTest;
 
 import org.junit.Test;
 
+import UB.DynamicSimpleMap;
 import UB.SimpleMap;
 import utils.ArrayUtil;
 import utils.IOUtil;
@@ -58,7 +59,25 @@ public class UtilTest {
     public void testSimpleMap() {
         SimpleMap<Integer, String> map = new SimpleMap<Integer, String>(3);
         map.put(0, "liting");
+        map.put(0, "liting");
+        map.put(0, "liting");
+        map.put(0, "liting");
+        map.put(0, "liting");
+        map.put(0, "liting");
         System.out.println(map.size());
+        System.out.println(map.toString());
+        
+        
+        DynamicSimpleMap map1 = new DynamicSimpleMap(3);
+        map1.put("k", "v");
+        map1.put("k1", "v");
+        map1.put("k2", "v");
+        map1.put("k3", "v");
+        map1.put("k4", "v");
+        System.out.println(map1.size());
+        System.out.println(map1.toString());
+        System.out.println(map1.get("k"));
+            
     }
     
 }

@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+
 public class StringUtil {
 
     /**
@@ -31,6 +32,55 @@ public class StringUtil {
     public static String capitalize(String input, boolean lowerRest) {
         return input.substring(0, 1).toUpperCase()
             + (lowerRest ? input.substring(1, input.length()).toLowerCase() : input.substring(1, input.length()));
+    }
+    /**
+     * 首字母小写转大写
+     * @param str
+     * @return
+     * @throws StringUtilsException
+     */
+    public static String upperCase(String str) {
+        if(isNotEmpty(str)) {
+            char c = str.charAt(0);
+            char[] ch = str.toCharArray();
+            if(c >= 'a' && c <= 'z') {
+                ch[0] = (char) (ch[0] - 32);
+                return new String(ch);
+            }
+        }else {
+        }
+        return str;
+    }
+    /**
+     * 首字母大写转小写
+     * @param str
+     * @return
+     * @throws StringUtilsException
+     */
+    public static String lowerCase(String str) {
+        if(isNotEmpty(str)) {
+            char c = str.charAt(0);
+            char[] ch = str.toCharArray();
+            if(c >= 'A' && c <= 'Z') {
+                ch[0] = (char) (ch[0] + 32);
+                return new String(ch);
+            }
+        }else {
+        }
+        return str;
+    }
+    /**
+     * 字符串为空判断
+     * @param str
+     * @return
+     */
+    @SuppressWarnings("null")
+    public static boolean isEmpty(String str) {
+        return (null == str && str.length() <= 0);
+    }
+    
+    public static boolean isNotEmpty(String str) {
+        return !isEmpty(str);
     }
 
     /**

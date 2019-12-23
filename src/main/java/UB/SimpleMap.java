@@ -1,6 +1,9 @@
 package UB;
 
-
+/**
+ * 动态添加简单map key重复的
+ * @date 2019/12/23
+ */
 public class SimpleMap<K, V> {
     private Object[][] pairs;
     private int index;
@@ -10,10 +13,19 @@ public class SimpleMap<K, V> {
     }
 
     public void put(K key, V value) {
-        if (index >= pairs.length) {
-            throw new ArrayIndexOutOfBoundsException();
+        int len = pairs.length;
+        
+        if(index < len) {
+            pairs[index++] = new Object[] {key,value};
+        }else if(index >= len) {
+            int l = len + 1;
+            Object[][] temp = new Object[l][0];
+            for(int i = 0; i < len; i++) {
+                temp[i] = pairs[i];
+            }
+            pairs = temp;
+            put(key,value);
         }
-        pairs[index++] = new Object[] {key, value};
     }
 
     @SuppressWarnings("unchecked")
