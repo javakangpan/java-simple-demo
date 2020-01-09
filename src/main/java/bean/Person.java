@@ -2,6 +2,9 @@
 
 import java.util.Optional;
 
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
 public class Person {
      String firstName;
      String lastName;
@@ -16,7 +19,7 @@ public class Person {
     public String toString() {
          return "firstName:" + firstName + ";lastName:" + lastName;
     }
-
+     
     public String getFirstName() {
         return firstName;
     }

@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-   <!-- scope="singleton" scope="prototype" -->
-   <bean id="helloWorld" class="bean.HelloWorld" init-method="init" destroy-method="destroy">
-       <property name="message" value="Hello World!"/>
-   </bean>
-   
-   <bean class="example.bean.InitHelloWorld" />
+	<!-- scope="singleton" scope="prototype" -->
+	<bean id="helloWorld" class="bean.HelloWorld" init-method="init"
+		destroy-method="destroy">
+		<property name="message" value="Hello World!" />
+	</bean>
+
+	<bean class="example.bean.InitHelloWorld" />
+
+	<bean id="ContextStartTest" class="example.bean.ContextStartTest"></bean>
+	<bean id="ContextCloseTest" class="example.bean.ContextCloseTest"></bean>
+
+	<bean id="MyEvenPlush" class="example.bean.MyEvenPlush"></bean>
+	<bean id="MyEventHandle" class="example.bean.MyEventHandle"></bean>
 
 </beans>
